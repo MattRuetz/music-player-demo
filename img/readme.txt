@@ -1,0 +1,1 @@
+Place album art (.jpg, .png, etc.) with the SAME NAME AS ITS RESPECTIVE SONG (other than file extension) in this folder to be fetched by the player.
