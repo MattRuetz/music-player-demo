@@ -65,12 +65,12 @@ h3 {
 .progress-container:hover {
     height: 12px;
     margin-bottom: 33px;
-    transition: height 0.2s ease-in-out, margin-bottom 0.2s ease-in-out;
+    transition: height 0.1s linear, margin-bottom 0.1s linear;
 }
 
 .progress-container:hover .duration-wrapper {
     top: -32px;
-    transition: top 0.2s ease-in-out;
+    transition: top 0.1s linear;
 }
 
 .progress {

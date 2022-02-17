@@ -85,25 +85,25 @@ const convertSecondsToTimeString = (timeInSecs) => {
 };
 
 const updateProgressBar = (e) => {
-        const {
-            duration,
-            currentTime
-        } = e.srcElement;
+    const {
+        duration,
+        currentTime
+    } = e.srcElement;
 
-        const progressPercent = (currentTime / duration) * 100;
-        progress.style.width = `${progressPercent}%`
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`
 
-        if (duration) {
-            durationEl.innerText = convertSecondsToTimeString(duration);
-        }
-        if (currentTime) {
-            currentTimeEl.innerText = convertSecondsToTimeString(currentTime);
-        }
-    
+    if (duration) {
+        durationEl.textContent = convertSecondsToTimeString(duration);
+    }
+    if (currentTime) {
+        currentTimeEl.textContent = convertSecondsToTimeString(currentTime);
+    }
+
 }
 
+// Hanlde user clicking on a point of progress bar
 function setProgressBar(e) {
-    console.log(e)
     const width = this.clientWidth;
     const clickX = e.offsetX;
     const {
@@ -116,5 +116,6 @@ function setProgressBar(e) {
 //Event Listeners
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', setProgressBar);
